@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Secure password generator
+		</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<center>
+			<h2>
+				Secure password generator
+			</h2>
+			<p>
+				Enter your email address below to generate a secure password:
+			</p>
+			<input id="email"/>
+			<button onclick="show()">
+				Generate
+			</button>
+			<p id="password" hidden>
+				fTUdY8!ZM2nSVoNiFexJ7od&jWa
+			</p>
+			<p id="invalid" hidden>
+				Invalid email
+			</p>
+		</center>
+	</body>
+	<script>
+		const email = document.getElementById("email");
+		const password = document.getElementById("password");
+		const invalid = document.getElementById("invalid");
+		const email_regex
+			= /([A-Z]|[a-z]|[0-9]|.)+(\+([A-Z]|[a-z]|[0-9]|.)+)?@([A-Z]|[a-z]|[0-9]|.)+/;
+
+		const valid_email = () => {
+			return email.value.match(email_regex) != null;
+		};
+		const show = () => {
+			if (valid_email()) {
+				password.hidden = false;
+				invalid.hidden = true;
+			} else {
+				password.hidden = true;
+				invalid.hidden = false;
+			}
+		};
+	</script>
+</html>
