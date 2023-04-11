@@ -1,0 +1,21 @@
+* {
+	font-family: sans;
+	font-size: 1rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+p {
+	font-size: 2rem;
+}
+
+button {
+	font-size: 2rem;
+}
+
+input {
+	border: 1px solid #888888;
+	font-size: 2rem;
+}
